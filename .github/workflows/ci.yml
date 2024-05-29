@@ -9,3 +9,10 @@ jobs:
     if: false
     steps:
       - run: echo Hello world! && exit 1
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [test987]
+    if: always() && (needs.test987.result == 'success' || needs.test987.result == 'skipped')
+    steps:
+      - run: echo "Deploying..."
