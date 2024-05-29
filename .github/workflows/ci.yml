@@ -13,6 +13,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: [test987]
-    if:  needs.test987.result == 'success' || needs.test987.result == 'skipped'
+    if: always() && (needs.test987.result == 'success' || needs.test987.result == 'skipped')
     steps:
       - run: echo "Deploying..."
