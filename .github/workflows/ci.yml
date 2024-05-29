@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     if: true
     steps:
-      - run: echo Hello world! && exit 1
+      - run: echo Hello world! && exit 0
 
   deploy:
     runs-on: ubuntu-latest
