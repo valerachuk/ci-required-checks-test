@@ -1,0 +1,11 @@
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  test987:
+    runs-on: ubuntu-latest
+    if: true
+    steps:
+      - run: echo Hello world!
